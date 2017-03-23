@@ -132,6 +132,10 @@ bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 
+# Move workspaces between outputs
+bindsym $mod+z move workspace to output left
+bindsym $mod+x move workspace to output right
+
 # Lockscreen shortcut
 bindsym Control+mod1+l exec i3lock -c 000000
 
