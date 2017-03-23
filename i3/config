@@ -136,6 +136,10 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 
+for_window [class="(?i)firefox"] title_format "<span fgcolor='#FFFFFF' bgcolor='#0B4362'>%title</span>"
+for_window [class="(?i)skype"] title_format "<span fgcolor='#FFFFFF' bgcolor='#4B6F7B'>%title</span>"
+for_window [class="(?i)atom"] title_format "<span fgcolor='#000000' bgcolor='#60B57C'>%title</span>"
+
 # Lockscreen shortcut
 bindsym Control+mod1+l exec i3lock -c 000000
 
