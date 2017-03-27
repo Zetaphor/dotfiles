@@ -200,6 +200,7 @@ bar {
 }
 
 exec --no-startup-id nm-applet
+exec --no-startup-id mintupdate
 
 client.unfocused #333333 #333333 #FFFFFF #333333
 client.focused_inactive #333333 #333333 #FFFFFF #000000
