@@ -40,7 +40,7 @@ bindsym $mod+Shift+q kill
 # There also is the (new) i3-dmenu-desktop which only displays applications
 # shipping a .desktop file. It is a wrapper around dmenu, so you need that
 # installed.
-bindsym $mod+d exec --no-startup-id i3-dmenu-desktop
+bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 
 # change focus
 bindsym $mod+j focus left
@@ -189,7 +189,7 @@ bindsym $mod+r mode "resize"
 # finds out, if available)
 bar {
   position top
-        status_command py3status -c ~/.config/i3/i3status.conf
+        status_command py3status -c ~/Git/dotfiles/i3/i3status.conf -n 5
         tray_output primary
   colors {
     statusline #AAAAAA
@@ -199,9 +199,8 @@ bar {
   }
 }
 
+exec --no-startup-id nm-applet
+
 client.unfocused #333333 #333333 #FFFFFF #333333
 client.focused_inactive #333333 #333333 #FFFFFF #000000
 client.focused #CECECE #333333 #CECECE #000000
-
-exec --no-startup-id dunst -config ~/.config/i3/dunstrc
-exec --no-startup-id nm-applet
