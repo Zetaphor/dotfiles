@@ -1,7 +1,7 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
-  inactive_color_offset = 0.34
+  inactive_color_offset = 0.27
   title_inactive_bg_color = "#333333"
   title_inactive_fg_color = "#cecece"
   title_transmit_bg_color = "#616161"
