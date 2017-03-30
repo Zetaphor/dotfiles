@@ -1,8 +1,10 @@
 [global_config]
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
-  title_inactive_fg_color = "#5e5e5e"
-  title_transmit_bg_color = "#333333"
+  inactive_color_offset = 0.34
+  title_inactive_bg_color = "#333333"
+  title_inactive_fg_color = "#cecece"
+  title_transmit_bg_color = "#616161"
 [keybindings]
   split_horiz = <Primary>minus
   split_vert = <Primary>backslash
