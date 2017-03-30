@@ -1,0 +1,28 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  focus = mouse
+  title_inactive_fg_color = "#5e5e5e"
+  title_transmit_bg_color = "#333333"
+[keybindings]
+  split_horiz = <Primary>minus
+  split_vert = <Primary>backslash
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    audible_bell = True
+    background_image = None
+    copy_on_selection = True
+    custom_command = fish
+    font = Anonymous Pro for Powerline 14
+    scrollback_infinite = True
+    use_custom_command = True
+    use_system_font = False
