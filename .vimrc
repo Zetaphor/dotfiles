@@ -25,6 +25,9 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
 Plugin 'davidhalter/jedi-vim'
 Plugin 'terryma/vim-multiple-cursors'
+Plugin 'posva/vim-vue'
+Plugin 'Yggdroot/indentLine'
+Plugin 'vim-syntastic/syntastic'
 
 " Color Themes
 Plugin 'colors'
@@ -184,3 +187,19 @@ let g:multi_cursor_prev_key='<C-S-D>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
 let g:multi_cursor_exit_from_insert_mode=0
+
+" indentLine
+let g:indentLine_char = '┆'
+
+" vim-syntastic
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_python_checkers = ['pylint']
+let g:syntastic_php_checkers = ['php']
+let g:syntastic_javascript_checkers = ['jshint']
