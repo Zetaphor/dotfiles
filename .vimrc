@@ -203,3 +203,5 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_javascript_checkers = ['jshint']
+
+start
