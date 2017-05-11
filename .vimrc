@@ -183,10 +183,11 @@ endif
 
 " vim-multiple-cursors
 let g:multi_cursor_next_key='<C-d>'
-let g:multi_cursor_prev_key='<C-S-D>'
+let g:multi_cursor_prev_key='<C-S-d>'
 let g:multi_cursor_skip_key='<C-x>'
 let g:multi_cursor_quit_key='<Esc>'
-let g:multi_cursor_exit_from_insert_mode=0
+imap <C-d>  <Esc>:call multiple_cursors#new("n", 0)<CR>
+let g:multi_cursor_exit_from_insert_mode=1
 
 " indentLine
 let g:indentLine_char = '┆'
@@ -195,7 +196,6 @@ let g:indentLine_char = '┆'
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
-
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
@@ -204,4 +204,10 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_javascript_checkers = ['jshint']
 
-start
+" Open file with CTRL-o
+nnoremap <C-o>  :e.<CR>
+inoremap <C-o>  <Esc>:e.<CR>
+
+" Delete line with CTRL-k
+nnoremap <C-k>  dd
+inoremap <C-k>  <Esc>ddi
