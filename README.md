@@ -27,3 +27,10 @@ My personal config
 - <kbd>Ctrl</kbd> + <kbd>w</kbd> - Close tab
 - <kbd>Ctrl</kbd> + <kbd>PageUp</kbd> - Previous tab
 - <kbd>Ctrl</kbd> + <kbd>PageDown</kbd> - Next tab
+
+*Buffers*
+
+- <kbd>Ctrl</kbd> + <kbd>Left</kbd> - Move buffer focus to the left
+- <kbd>Ctrl</kbd> + <kbd>Right</kbd> - Move buffer focus to the right
+- <kbd>Ctrl</kbd> + <kbd>Up</kbd> - Move buffer focus up
+- <kbd>Ctrl</kbd> + <kbd>Down</kbd> - Move buffer focus down
