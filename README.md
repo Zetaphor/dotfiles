@@ -1,6 +1,10 @@
 # dotfiles
 My personal config
 
+## Terminator
+Set scaled_zoom to <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>z</kbd>
+Set group_tab to <kbd>Super</kbd> + <kbd>t</kbd>
+
 ## .vimrc
 *Everywhere*
 
