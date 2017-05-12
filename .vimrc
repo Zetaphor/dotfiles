@@ -28,6 +28,8 @@ Plugin 'terryma/vim-multiple-cursors'
 Plugin 'posva/vim-vue'
 Plugin 'Yggdroot/indentLine'
 Plugin 'vim-syntastic/syntastic'
+Plugin 'bronson/vim-trailing-whitespace'
+Plugin 'ap/vim-css-color'
 
 " Color Themes
 Plugin 'colors'
@@ -95,9 +97,9 @@ endif
 set hidden
 
 " FIXME: (broken) ctrl s to save
-noremap  <C-S> :update<CR>
-vnoremap <C-S> <C-C>:update<CR>
-inoremap <C-S> <Esc>:update<CR>
+noremap  <silent> <C-S> :update<CR>:FixWhitespace<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>i
 
 set nobackup
 set nowritebackup
