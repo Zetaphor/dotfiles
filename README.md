@@ -5,6 +5,29 @@ My personal config
 Set scaled_zoom to <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>z</kbd>
 Set group_tab to <kbd>Super</kbd> + <kbd>t</kbd>
 
+## Vim Setup
+Install Vundle
+
+Open vim and run
+
+:PluginInstall
+
+Add the plugin colors
+
+$ cd
+
+$ git clone https://github.com/flazz/vim-colorschemes
+
+$ mv vim-colorschemes/colors/ .vim
+
+$ rm -rf vim-colorschemes
+
+Quit and enter in vim again to apply the changes
+
+You can also add machine specific config to ~/.local.vim
+
+For best results make sure your $TERM env variable is 256 colours; export TERM=xterm-256color
+
 ## .vimrc
 *Everywhere*
 
