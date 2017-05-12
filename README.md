@@ -20,6 +20,7 @@ My personal config
 - <kbd>Tab</kbd> 						   - Indent text
 - <kbd>Tab</kbd> + <kbd>Shift</kbd> 	 - Reindent text
 - <kbd>Ctrl</kbd> + <kbd>d</kbd> 	     - Multiple cursor selection
+- <kbd>Ctrl</kbd> + <kbd>k</kbd> 	     - Delete the current line
 
 *Tabs*
 
@@ -27,9 +28,11 @@ My personal config
 - <kbd>Ctrl</kbd> + <kbd>w</kbd> - Close tab
 - <kbd>Ctrl</kbd> + <kbd>PageUp</kbd> - Previous tab
 - <kbd>Ctrl</kbd> + <kbd>PageDown</kbd> - Next tab
+- <kbd>Ctrl</kbd> + <kbd>o</kbd> - Toggle NERDTree
 
 *Buffers*
 
+- <kbd>Ctrl</kbd> + <kbd>q</kbd> - Close the current buffer
 - <kbd>Ctrl</kbd> + <kbd>Left</kbd> - Move buffer focus to the left
 - <kbd>Ctrl</kbd> + <kbd>Right</kbd> - Move buffer focus to the right
 - <kbd>Ctrl</kbd> + <kbd>Up</kbd> - Move buffer focus up
