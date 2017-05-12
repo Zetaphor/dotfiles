@@ -134,24 +134,28 @@ let g:airline_powerline_fonts = 1
 
 " Find
 map <C-f> /
+
 " indent / deindent after selecting the text with (⇧ v), (.) to repeat.
 vnoremap <Tab> >
 vnoremap <S-Tab> <
+
 " comment / decomment & normal comment behavior
 vmap <C-/> gc
+
 " Disable tComment to escape some entities
 let g:tcomment#replacements_xml={}
-" Text wrap simpler, then type the open tag or ',"
-vmap <C-w> S
+
 " Cut, Paste, Copy
 vmap <C-x> d
 vmap <C-v> p
 vmap <C-c> y
+
 " Undo, Redo (broken)
 nnoremap <C-z>  :undo<CR>
 inoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-y>  :redo<CR>
 inoremap <C-y>  <Esc>:redo<CR>
+
 " Tabs
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
@@ -218,3 +222,7 @@ nmap <silent> <C-Right> :wincmd l<CR>
 " Close current buffer pane with CTRL-q
 nmap <silent> <C-q> :q<CR>
 inoremap <silent> <C-q> <Esc>:q<CR>i
+
+" Text wrap simpler, then type the open tag or ',"
+vmap <CS-w> S
+

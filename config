@@ -1,0 +1,36 @@
+[global_config]
+  enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
+  focus = mouse
+  inactive_color_offset = 0.34
+  title_inactive_fg_color = "#5e5e5e"
+  title_transmit_bg_color = "#333333"
+[keybindings]
+  close_term = <Super>q
+  next_tab = <Primary>BackSpace
+  prev_tab = <Primary>BackSpace
+  split_horiz = <Primary>minus
+  split_vert = <Primary>backslash
+  toggle_zoom = <Primary><Shift>z
+[layouts]
+  [[default]]
+    [[[child1]]]
+      parent = window0
+      profile = default
+      type = Terminal
+    [[[window0]]]
+      parent = ""
+      type = Window
+[plugins]
+[profiles]
+  [[default]]
+    allow_bold = False
+    audible_bell = True
+    background_image = None
+    copy_on_selection = True
+    custom_command = fish
+    font = Hack 11
+    scroll_on_output = False
+    scrollback_infinite = True
+    show_titlebar = False
+    use_custom_command = True
+    use_system_font = False
