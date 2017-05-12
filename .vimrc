@@ -113,11 +113,8 @@ set completeopt=menuone,longest,preview
 " Plugins config
 "
 
-" NERDTree
-nnoremap <S-n> :NERDTreeToggle<CR>
-
 " CtrlP
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*
+set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/vendor/*
 
 " Ultisnip
 " NOTE: <f1> otherwise it overrides <tab> forever
@@ -204,10 +201,20 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_javascript_checkers = ['jshint']
 
-" Open file with CTRL-o
-nnoremap <C-o>  :e.<CR>
-inoremap <C-o>  <Esc>:e.<CR>
-
 " Delete line with CTRL-k
-nnoremap <C-k>  dd
-inoremap <C-k>  <Esc>ddi
+nnoremap <silent> <C-k>  dd
+inoremap <silent> <C-k>  <Esc>ddi
+
+" NERDTree
+nnoremap <silent> <C-o> :NERDTreeToggle<CR>
+inoremap <silent> <C-o> <Esc>:NERDTreeToggle<CR>
+
+" Pane navigation
+nmap <silent> <C-Up> :wincmd k<CR>
+nmap <silent> <C-Down> :wincmd j<CR>
+nmap <silent> <C-Left> :wincmd h<CR>
+nmap <silent> <C-Right> :wincmd l<CR>
+
+" Close current buffer pane with CTRL-q
+nmap <silent> <C-q> :q<CR>
+inoremap <silent> <C-q> <Esc>:q<CR>i
