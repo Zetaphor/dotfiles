@@ -1,6 +1,8 @@
 [global_config]
+  borderless = True
   enabled_plugins = LaunchpadCodeURLHandler, APTURLHandler, LaunchpadBugURLHandler
   focus = mouse
+  geometry_hinting = False
   inactive_color_offset = 0.27
   title_inactive_bg_color = "#333333"
   title_inactive_fg_color = "#cecece"
@@ -20,11 +22,13 @@
 [plugins]
 [profiles]
   [[default]]
+    allow_bold = False
     audible_bell = True
     background_image = None
     copy_on_selection = True
     custom_command = fish
-    font = Anonymous Pro for Powerline 14
+    font = Hack 11
     scrollback_infinite = True
+    show_titlebar = False
     use_custom_command = True
     use_system_font = False
