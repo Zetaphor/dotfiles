@@ -28,6 +28,14 @@ You can also add machine specific config to ~/.local.vim
 
 For best results make sure your $TERM env variable is 256 colours; export TERM=xterm-256color
 
+### Install YCMD
+
+$ cd ~/.vim/bundle/YouCompleteMe
+
+$ apt install cmake -y
+
+$ ./install.py
+
 ## .vimrc
 *Everywhere*
 
