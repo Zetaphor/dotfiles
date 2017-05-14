@@ -4,6 +4,7 @@
 " Updated by Dorian Neto (https://github.com/dorianneto)"
 
 set shell=/bin/bash
+set clipboard=unnamed
 
 set nocompatible
 filetype off
@@ -38,6 +39,8 @@ Plugin 'Raimondi/delimitMate'
 Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
+Plugin 'tpope/vim-repeat'
+Plugin 'svermeulen/vim-easyclip'
 
 " Color Themes
 Plugin 'colors'
@@ -150,11 +153,6 @@ vmap <C-/> gc
 " Disable tComment to escape some entities
 let g:tcomment#replacements_xml={}
 
-" Cut, Paste, Copy
-vmap <C-x> d
-vmap <C-v> p
-vmap <C-c> y
-
 " Undo, Redo (broken)
 nnoremap <C-z>  :undo<CR>
 inoremap <C-z>  <Esc>:undo<CR>
@@ -231,9 +229,43 @@ nmap <silent> <C-q> :q<CR>
 inoremap <silent> <C-q> <Esc>:q<CR>i
 
 " CTRL-S to save, fix whitespace
-noremap  <silent> <C-S> :update<CR>:FixWhitespace<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>
+noremap  <silent> <C-S> :update<CR>:FixWhitespace<CR>:update<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>:FixWhitespace<CR>:update<CR>
+inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>:update<CR>
+
+" Cut, Paste, Copy
+vmap <C-x> <silent> d
+vmap <C-v> <silent> p
+imap <C-v> <silent> <Esc>vp
+nmap <C-v> <silent> <Esc>vp
+vmap <C-c> <silent> y
+" FIXME: Yanks shortcut isn't working
+nmap <C-i> <silent> :Yanks<CR>
+imap <C-i> <silent> <Esc>:Yanks<CR>
+
+" Disable the c key in normal mode
+nnoremap c <NOP>
+
+" Move words with CTRL-Arrow
+nmap <silent> <C-Left> b
+nmap <silent> <C-Right> w
+nmap <silent> <C-Up> 0
+nmap <silent> <C-Down> $
+
+" FIXME: This is not working
+" Move lines up/down with CTRL-SHIFT-Arrow
+nmap <C-S-Up> :m-2<CR>
+imap <C-S-Up> <Esc>:m-2<CR>
+nmap <C-S-Down> :m+<CR>
+imap <C-S-Down> <Esc>:m+<CR>
+
+
+" Disable the EasyClip bindings, we just want it's yank panel
+let g:EasyClipUseYankDefaults=0
+let g:EasyClipUseCutDefaults=0
+let g:EasyClipUsePasteDefaults=0
+let g:EasyClipEnableBlackHoleRedirect=0
+let g:EasyClipUsePasteToggleDefaults=0
 
 " Text wrap simpler, then type the open tag or ',"
 vmap <CS-w> S
