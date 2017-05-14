@@ -169,14 +169,16 @@ inoremap <C-y>  <Esc>:redo<CR>
 " Tabs
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
-nnoremap <C-PageUp>  :tabprevious<CR>
-inoremap <C-PageUp>  <Esc>:tabprevious<CR>i
-nnoremap <C-PageDown>  :tabnext<CR>
-inoremap <C-PageDown>  <Esc>:tabnext<CR>i
-nnoremap <C-t>  :tabnew<CR>
-inoremap <C-t>  <Esc>:tabnew<CR>i
-nnoremap <C-w>  :tabclose<CR>
-inoremap <C-w>  <Esc>:tabclose<CR>i
+nnoremap <silent> <C-PageUp>  :bprevious<CR>
+inoremap <silent> <C-PageUp>  <Esc>:bprevious<CR>i
+nnoremap <silent> <C-PageDown>  :bnext<CR>
+inoremap <silent> <C-PageDown>  <Esc>:bnext<CR>i
+nnoremap <silent> <C-t>  :enew<CR>
+inoremap <silent> <C-t>  <Esc>:enew<CR>
+nnoremap <silent> <C-w>  :bp <BAR> bd #<CR>
+inoremap <silent> <C-w>  <Esc>:bp <BAR> bd #<CR>
+nnoremap <silent> <C-b> :ls<CR>
+inoremap <silent> <C-b> <Esc>:ls<CR>
 
 " lazy ':'
 map \ :
