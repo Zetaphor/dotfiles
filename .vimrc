@@ -30,6 +30,14 @@ Plugin 'Yggdroot/indentLine'
 Plugin 'vim-syntastic/syntastic'
 Plugin 'bronson/vim-trailing-whitespace'
 Plugin 'ap/vim-css-color'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'sekel/vim-vue-syntastic'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Raimondi/delimitMate'
+Plugin 'majutsushi/tagbar'
+Plugin 'xolox/vim-misc'
+Plugin 'xolox/vim-easytags'
 
 " Color Themes
 Plugin 'colors'
@@ -212,8 +220,8 @@ nnoremap <silent> <C-k>  dd
 inoremap <silent> <C-k>  <Esc>ddi
 
 " NERDTree
-nnoremap <silent> <C-o> :NERDTreeToggle<CR>
-inoremap <silent> <C-o> <Esc>:NERDTreeToggle<CR>
+nnoremap <silent> <C-o> :NERDTreeTabsToggle<CR>
+inoremap <silent> <C-o> <Esc>:NERDTreeTabsToggle<CR>
 
 " Pane navigation
 nmap <silent> <C-Up> :wincmd k<CR>
@@ -228,3 +236,17 @@ inoremap <silent> <C-q> <Esc>:q<CR>i
 " Text wrap simpler, then type the open tag or ',"
 vmap <CS-w> S
 
+" delimitMate
+let delimitMate_expand_cr = 1
+augroup mydelimitMate
+  au!
+  au FileType markdown let b:delimitMate_nesting_quotes = ["`"]
+  au FileType tex let b:delimitMate_quotes = ""
+  au FileType tex let b:delimitMate_matchpairs = "(:),[:],{:},`:'"
+  au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
+augroup END
+
+if (exists('+colorcolumn'))
+  set colorcolumn=80
+  highlight ColorColumn ctermbg=8
+endif

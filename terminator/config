@@ -8,6 +8,8 @@
   title_inactive_fg_color = "#cecece"
   title_transmit_bg_color = "#616161"
 [keybindings]
+  next_tab = <Primary><Shift>Page_Down
+  prev_tab = <Primary><Shift>Page_Up
   split_horiz = <Primary>minus
   split_vert = <Primary>backslash
 [layouts]
