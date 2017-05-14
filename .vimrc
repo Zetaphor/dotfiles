@@ -83,7 +83,7 @@ set autoread
 
 set encoding=utf-8
 set tabstop=2 shiftwidth=2 expandtab
-set listchars=tab:▒░,trail:▓
+set listchars=tab:▒░,trail:·
 set list
 
 inoremap <C-U> <C-G>u<C-U>
@@ -103,11 +103,6 @@ endif
 
 " do not history when leavy buffer
 set hidden
-
-" FIXME: (broken) ctrl s to save
-noremap  <silent> <C-S> :update<CR>:FixWhitespace<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>
-inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>i
 
 set nobackup
 set nowritebackup
@@ -166,7 +161,7 @@ inoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-y>  :redo<CR>
 inoremap <C-y>  <Esc>:redo<CR>
 
-" Tabs
+" Buffers
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
 nnoremap <silent> <C-PageUp>  :bprevious<CR>
@@ -234,6 +229,11 @@ nmap <silent> <C-Right> :wincmd l<CR>
 " Close current buffer pane with CTRL-q
 nmap <silent> <C-q> :q<CR>
 inoremap <silent> <C-q> <Esc>:q<CR>i
+
+" CTRL-S to save, fix whitespace
+noremap  <silent> <C-S> :update<CR>:FixWhitespace<CR>
+vnoremap <silent> <C-S> <C-C>:update<CR>
+inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>
 
 " Text wrap simpler, then type the open tag or ',"
 vmap <CS-w> S
