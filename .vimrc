@@ -41,6 +41,7 @@ Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-repeat'
 Plugin 'svermeulen/vim-easyclip'
+Plugin 'Chiel92/vim-autoformat'
 
 " Color Themes
 Plugin 'colors'
@@ -243,10 +244,11 @@ vmap <C-c> <silent> y
 nmap <C-i> <silent> :Yanks<CR>
 imap <C-i> <silent> <Esc>:Yanks<CR>
 
-" Disable the c key in normal mode
+" Disable the c/p keys in normal mode
 nnoremap c <NOP>
+nnoremap o <NOP>
 
-" Move words with CTRL-Arrow
+" Move to next word with CTRL-Arrow
 nmap <silent> <C-Left> b
 nmap <silent> <C-Right> w
 nmap <silent> <C-Up> 0
@@ -259,6 +261,9 @@ imap <C-S-Up> <Esc>:m-2<CR>
 nmap <C-S-Down> :m+<CR>
 imap <C-S-Down> <Esc>:m+<CR>
 
+" CTRL-SHIFT-f to format code
+nnoremap <C-S-f> :Autoformat<CR>
+inoremap <C-S-f> <Esc>:Autoformat<CR>
 
 " Disable the EasyClip bindings, we just want it's yank panel
 let g:EasyClipUseYankDefaults=0
@@ -284,3 +289,16 @@ if (exists('+colorcolumn'))
   set colorcolumn=80
   highlight ColorColumn ctermbg=8
 endif
+
+" Syntastic panel toggle
+function! ToggleErrors()
+  let old_last_winnr = winnr('$')
+  lclose
+  if old_last_winnr == winnr('$')
+    " Nothing was closed, open syntastic error location panel
+    Errors
+  endif
+endfunction
+" CTRL-E to toggle Syntastic error panel
+nnoremap <silent> <C-e> :call ToggleErrors()<CR>
+
