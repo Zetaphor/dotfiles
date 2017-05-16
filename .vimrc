@@ -17,7 +17,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'gcmt/breeze.vim'
-Plugin 'kien/ctrlp.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -41,6 +41,8 @@ Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-repeat'
 Plugin 'svermeulen/vim-easyclip'
 Plugin 'Chiel92/vim-autoformat'
+Plugin 'scrooloose/nerdtree-git-plugin'
+Plugin 'ryanoasis/vim-devicons'
 
 " Color Themes
 Plugin 'colors'
@@ -290,9 +292,8 @@ function! ToggleErrors()
   lclose
   if old_last_winnr == winnr('$')
     " Nothing was closed, open syntastic error location panel
-   Errors
+    Errors
   endif
 endfunction
 " CTRL-E to toggle Syntastic error panel
 nnoremap <silent> <C-e> :call ToggleErrors()<CR>
-
