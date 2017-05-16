@@ -18,7 +18,6 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
 Plugin 'gcmt/breeze.vim'
 Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
@@ -125,13 +124,6 @@ set completeopt=menuone,longest,preview
 " CtrlP
 set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/vendor/*
 
-" Ultisnip
-" NOTE: <f1> otherwise it overrides <tab> forever
-let g:UltiSnipsExpandTrigger="<f1>"
-let g:UltiSnipsJumpForwardTrigger="<f1>"
-let g:UltiSnipsJumpBackwardTrigger="<c-k>"
-let g:did_UltiSnips_vim_after = 1
-
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
@@ -205,7 +197,7 @@ set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_open = 0
 let g:syntastic_check_on_wq = 0
 let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php']
@@ -235,14 +227,16 @@ vnoremap <silent> <C-S> <C-C>:update<CR>:FixWhitespace<CR>:update<CR>
 inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>:update<CR>
 
 " Cut, Paste, Copy
-vmap <C-x> <silent> d
-vmap <C-v> <silent> p
-imap <C-v> <silent> <Esc>vp
-nmap <C-v> <silent> <Esc>vp
-vmap <C-c> <silent> y
+vmap <C-x> d
+vnoremap <x> d
+vmap <C-v> p
+vnoremap <c> y
+imap <C-v> <Esc>pi
+nmap <C-v> <Esc>p
+vmap <C-c> y
 " FIXME: Yanks shortcut isn't working
-nmap <C-i> <silent> :Yanks<CR>
-imap <C-i> <silent> <Esc>:Yanks<CR>
+nmap <silent> <C-i> :Yanks<CR>
+imap <silent> <C-i> <Esc>:Yanks<CR>
 
 " Disable the c/p keys in normal mode
 nnoremap c <NOP>
@@ -296,7 +290,7 @@ function! ToggleErrors()
   lclose
   if old_last_winnr == winnr('$')
     " Nothing was closed, open syntastic error location panel
-    Errors
+   Errors
   endif
 endfunction
 " CTRL-E to toggle Syntastic error panel
