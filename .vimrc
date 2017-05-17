@@ -3,7 +3,7 @@
 " Best view with a 256 color terminal and Powerline fonts
 " Updated by Dorian Neto (https://github.com/dorianneto)"
 
-set shell=/bin/bash
+      set shell=/bin/bash
 set clipboard=unnamed
 
 set nocompatible
@@ -138,13 +138,18 @@ let g:airline_powerline_fonts = 1
 " Find
 map <C-f> /
 
-" indent / deindent after selecting the text with (⇧ v), (.) to repeat.
+" Capture SHIFT-Tab
+set t_kB=^[[Z]]
+map <Esc>[Z <s-tab>
+
+" Tab and SHIFT-Tab to indent/unindent
 vnoremap <Tab> >>
 vnoremap <S-Tab> <<
 nnoremap <Tab> >>
-nnoremap <S-Tab> <<
-inoremap <Tab> <Esc> >> i
-inoremap <S-Tab> <Esc> << i
+nnoremap <s-tab> <<
+inoremap <Tab> <Esc>>>i
+inoremap <s-tab> <Esc><<i
+"map <Esc>[Z <s-tab>]
 
 " comment / decomment & normal comment behavior
 vmap <C-/> :TComment<CR>
