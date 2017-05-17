@@ -8,11 +8,39 @@
   title_inactive_fg_color = "#cecece"
   title_transmit_bg_color = "#616161"
 [keybindings]
-  next_tab = <Primary><Shift>Page_Down
-  prev_tab = <Primary><Shift>Page_Up
-  search = <Primary><Shift><Alt>f
+  broadcast_all = Disabled
+  broadcast_group = Disabled
+  broadcast_off = Disabled
+  close_window = Disabled
+  cycle_next = Disabled
+  cycle_prev = Disabled
+  group_all = Disabled
+  group_tab = Disabled
+  help = Disabled
+  hide_window = Disabled
+  insert_number = Disabled
+  insert_padded = Disabled
+  layout_launcher = Disabled
+  move_tab_left = Disabled
+  move_tab_right = Disabled
+  new_tab = Disabled
+  new_terminator = Disabled
+  new_window = Disabled
+  next_profile = Disabled
+  next_tab = <Primary><Shift><Alt>F12
+  prev_tab = <Primary><Shift><Alt>F11
+  reset = Disabled
+  reset_clear = Disabled
+  rotate_ccw = Disabled
+  rotate_cw = Disabled
+  scaled_zoom = <Primary><Shift>z
+  search = <Primary><Shift><Alt>F10
   split_horiz = <Primary>minus
   split_vert = <Primary>backslash
+  toggle_scrollbar = Disabled
+  toggle_zoom = Disabled
+  ungroup_all = Disabled
+  ungroup_tab = Disabled
 [layouts]
   [[default]]
     [[[child1]]]
