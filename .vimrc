@@ -139,16 +139,21 @@ let g:airline_powerline_fonts = 1
 map <C-f> /
 
 " indent / deindent after selecting the text with (⇧ v), (.) to repeat.
-vnoremap <Tab> >
-vnoremap <S-Tab> <
+vnoremap <Tab> >>
+vnoremap <S-Tab> <<
+nnoremap <Tab> >>
+nnoremap <S-Tab> <<
+inoremap <Tab> <Esc> >> i
+inoremap <S-Tab> <Esc> << i
 
 " comment / decomment & normal comment behavior
-vmap <C-/> gc
+vmap <C-/> :TComment<CR>
+imap <C-/> <Esc>:TComment<CR>i
 
 " Disable tComment to escape some entities
 let g:tcomment#replacements_xml={}
 
-" Undo, Redo (broken)
+" Undo, Redo
 nnoremap <C-z>  :undo<CR>
 inoremap <C-z>  <Esc>:undo<CR>
 nnoremap <C-y>  :redo<CR>
@@ -157,14 +162,22 @@ inoremap <C-y>  <Esc>:redo<CR>
 " Buffers
 let g:airline_theme='jellybeans'
 let g:airline#extensions#tabline#enabled = 1
+
+" Move through buffers with CTRL-PageUp/Down
 nnoremap <silent> <C-PageUp>  :bprevious<CR>
 inoremap <silent> <C-PageUp>  <Esc>:bprevious<CR>i
 nnoremap <silent> <C-PageDown>  :bnext<CR>
 inoremap <silent> <C-PageDown>  <Esc>:bnext<CR>i
+
+" CTRL-t opens new buffer
 nnoremap <silent> <C-t>  :enew<CR>
 inoremap <silent> <C-t>  <Esc>:enew<CR>
+
+" Close buffer with CTRL-w
 nnoremap <silent> <C-w>  :bp <BAR> bd #<CR>
 inoremap <silent> <C-w>  <Esc>:bp <BAR> bd #<CR>
+
+" CTRL-b shows buffer list
 nnoremap <silent> <C-b> :ls<CR>
 inoremap <silent> <C-b> <Esc>:ls<CR>
 
@@ -180,7 +193,6 @@ noremap  <Leader>g :GitGutterToggle<CR>
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
 endif
-
 
 " vim-multiple-cursors
 let g:multi_cursor_next_key='<C-d>'
@@ -214,19 +226,15 @@ nnoremap <silent> <C-o> :NERDTreeTabsToggle<CR>
 inoremap <silent> <C-o> <Esc>:NERDTreeTabsToggle<CR>
 
 " Pane navigation
-nmap <silent> <C-Up> :wincmd k<CR>
-nmap <silent> <C-Down> :wincmd j<CR>
-nmap <silent> <C-Left> :wincmd h<CR>
-nmap <silent> <C-Right> :wincmd l<CR>
-
-" Close current buffer pane with CTRL-q
-nmap <silent> <C-q> :q<CR>
-inoremap <silent> <C-q> <Esc>:q<CR>i
+nmap <silent> <CS-Up> :wincmd k<CR>
+nmap <silent> <CS-Down> :wincmd j<CR>
+nmap <silent> <CS-Left> :wincmd h<CR>
+nmap <silent> <CS-Right> :wincmd l<CR>
 
 " CTRL-S to save, fix whitespace
-noremap  <silent> <C-S> :update<CR>:FixWhitespace<CR>:update<CR>
-vnoremap <silent> <C-S> <C-C>:update<CR>:FixWhitespace<CR>:update<CR>
-inoremap <silent> <C-S> <Esc>:update<CR>:FixWhitespace<CR>:update<CR>
+noremap  <silent> <C-S> :FixWhitespace<CR>:update<CR>
+vnoremap <silent> <C-S> <C-C>:FixWhitespace<CR>:update<CR>
+inoremap <silent> <C-S> <Esc>:FixWhitespace<CR>:update<CR>
 
 " Cut, Paste, Copy
 vmap <C-x> d
@@ -237,8 +245,8 @@ imap <C-v> <Esc>pi
 nmap <C-v> <Esc>p
 vmap <C-c> y
 " FIXME: Yanks shortcut isn't working
-nmap <silent> <C-i> :Yanks<CR>
-imap <silent> <C-i> <Esc>:Yanks<CR>
+"nmap <silent> <C-i> :Yanks<CR>
+"imap <silent> <C-i> <Esc>:Yanks<CR>
 
 " Disable the c/p keys in normal mode
 nnoremap c <NOP>
@@ -247,19 +255,21 @@ nnoremap o <NOP>
 " Move to next word with CTRL-Arrow
 nmap <silent> <C-Left> b
 nmap <silent> <C-Right> w
+
+" Move to start/end of line with CTRL-Up/Down
 nmap <silent> <C-Up> 0
 nmap <silent> <C-Down> $
 
 " FIXME: This is not working
 " Move lines up/down with CTRL-SHIFT-Arrow
-nmap <C-S-Up> :m-2<CR>
-imap <C-S-Up> <Esc>:m-2<CR>
-nmap <C-S-Down> :m+<CR>
-imap <C-S-Down> <Esc>:m+<CR>
+nmap <CS-Up> :m-2<CR>
+imap <CS-Up> <Esc>:m-2<CR>
+nmap <CS-Down> :m+<CR>
+imap <CS-Down> <Esc>:m+<CR>
 
 " CTRL-SHIFT-f to format code
-nnoremap <C-S-f> :Autoformat<CR>
-inoremap <C-S-f> <Esc>:Autoformat<CR>
+nnoremap <CS-f> :Autoformat<CR>
+inoremap <CS-f> <Esc>:Autoformat<CR>
 
 " Disable the EasyClip bindings, we just want it's yank panel
 let g:EasyClipUseYankDefaults=0
@@ -271,6 +281,10 @@ let g:EasyClipUsePasteToggleDefaults=0
 " Text wrap simpler, then type the open tag or ',"
 vmap <CS-w> S
 
+" Tagbar Toggle
+nnoremap <silent> <C-u> :TagbarToggle<CR>
+inoremap <silent> <C-u> <Esc>:TagbarToggle<CR>
+
 " delimitMate
 let delimitMate_expand_cr = 1
 augroup mydelimitMate
@@ -281,6 +295,7 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
+" Highlight column
 if (exists('+colorcolumn'))
   set colorcolumn=80
   highlight ColorColumn ctermbg=8
