@@ -309,3 +309,14 @@ function! ToggleErrors()
 endfunction
 " CTRL-E to toggle Syntastic error panel
 nnoremap <silent> <C-e> :call ToggleErrors()<CR>
+
+set cursorline
+highlight CursorLine guibg=237
+highlight Cursor ctermfg=15;
+
+" Change cursor line color when using insert mode
+autocmd InsertEnter * highlight CursorLine ctermbg=16
+autocmd InsertLeave * highlight CursorLine ctermbg=237;
+
+
+
