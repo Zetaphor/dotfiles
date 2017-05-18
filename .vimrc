@@ -3,7 +3,7 @@
 " Best view with a 256 color terminal and Powerline fonts
 " Updated by Dorian Neto (https://github.com/dorianneto)"
 
-      set shell=/bin/bash
+set shell=/bin/bash
 set clipboard=unnamed
 
 set nocompatible
@@ -91,7 +91,7 @@ set tabstop=2 shiftwidth=2 expandtab
 set listchars=tab:▒░,trail:·
 set list
 
-inoremap <C-U> <C-G>u<C-U>
+"inoremap <C-U> <C-G>u<C-U>
 
 set number
 set hlsearch
@@ -99,7 +99,7 @@ set ignorecase
 set smartcase
 
 " Don't use Ex mode, use Q for formatting
-map Q gq
+"map Q gq
 
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
@@ -115,7 +115,7 @@ set noswapfile
 set fileformats=unix,dos,mac
 
 " exit insert mode
-inoremap <C-c> <Esc>
+"inoremap <C-c> <Esc>
 
 set completeopt=menuone,longest,preview
 
@@ -130,26 +130,23 @@ set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/vendor/*
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_powerline_fonts = 1
 
-"
-" Basic shortcuts definitions
-"  most in visual mode / selection (v or ⇧ v)
-"
-
 " Find
 map <C-f> /
 
 " Capture SHIFT-Tab
 set t_kB=^[[Z]]
-map <Esc>[Z <s-tab>
+map <Esc>[Z <S-Tab>
+"map! <Esc>[Z <S-Tab>
+"set <F13>=^[[Z]]
 
 " Tab and SHIFT-Tab to indent/unindent
 vnoremap <Tab> >>
 vnoremap <S-Tab> <<
 nnoremap <Tab> >>
-nnoremap <s-tab> <<
-inoremap <Tab> <Esc>>>i
-inoremap <s-tab> <Esc><<i
-"map <Esc>[Z <s-tab>]
+nnoremap <S-Tab> <<
+inoremap <Tab> >>
+" This doesn't seem to be responding at all, check map!
+inoremap <S-Tab> <Esc>v<<
 
 " comment / decomment & normal comment behavior
 vmap <C-/> :TComment<CR>
@@ -186,14 +183,6 @@ inoremap <silent> <C-w>  <Esc>:bp <BAR> bd #<CR>
 nnoremap <silent> <C-b> :ls<CR>
 inoremap <silent> <C-b> <Esc>:ls<CR>
 
-" lazy ':'
-map \ :
-
-let mapleader = ','
-nnoremap <Leader>p :set paste<CR>
-nnoremap <Leader>o :set nopaste<CR>
-noremap  <Leader>g :GitGutterToggle<CR>
-
 " this machine config
 if filereadable(expand("~/.vimrc.local"))
   source ~/.vimrc.local
@@ -229,17 +218,20 @@ inoremap <silent> <C-k>  <Esc>ddi
 " NERDTree
 nnoremap <silent> <C-o> :NERDTreeTabsToggle<CR>
 inoremap <silent> <C-o> <Esc>:NERDTreeTabsToggle<CR>
+vnoremap <silent> <C-o> :NERDTreeTabsToggle<CR>
 
 " Pane navigation
-nmap <silent> <CS-Up> :wincmd k<CR>
-nmap <silent> <CS-Down> :wincmd j<CR>
-nmap <silent> <CS-Left> :wincmd h<CR>
-nmap <silent> <CS-Right> :wincmd l<CR>
+" Disabled because I'm running out of key combos lol
+" May have to start taking modes seriously!
+"nmap <C-S-Up> :wincmd k<CR>
+"nmap <C-S-Down> :wincmd j<CR>
+"nmap <C-S-Left> :wincmd h<CR>
+"nmap <C-S-Right> :wincmd l<CR>
 
 " CTRL-S to save, fix whitespace
-noremap  <silent> <C-S> :FixWhitespace<CR>:update<CR>
-vnoremap <silent> <C-S> <C-C>:FixWhitespace<CR>:update<CR>
-inoremap <silent> <C-S> <Esc>:FixWhitespace<CR>:update<CR>
+noremap  <silent> <C-s> :FixWhitespace<CR>:update<CR>
+vnoremap <silent> <C-s> <C-C>:FixWhitespace<CR>:update<CR>
+inoremap <silent> <C-s> <Esc>:FixWhitespace<CR>:update<CR>
 
 " Cut, Paste, Copy
 vmap <C-x> d
@@ -249,9 +241,9 @@ vnoremap <c> y
 imap <C-v> <Esc>pi
 nmap <C-v> <Esc>p
 vmap <C-c> y
-" FIXME: Yanks shortcut isn't working
+        " FIXME: Yanks shortcut isn't working
 "nmap <silent> <C-i> :Yanks<CR>
-"imap <silent> <C-i> <Esc>:Yanks<CR>
+" imap <silent> <C-i> <Esc>:Yanks<CR>
 
 " Disable the c/p keys in normal mode
 nnoremap c <NOP>
@@ -267,14 +259,14 @@ nmap <silent> <C-Down> $
 
 " FIXME: This is not working
 " Move lines up/down with CTRL-SHIFT-Arrow
-nmap <CS-Up> :m-2<CR>
-imap <CS-Up> <Esc>:m-2<CR>
-nmap <CS-Down> :m+<CR>
-imap <CS-Down> <Esc>:m+<CR>
+nmap <silent> <C-A-Up> :m-2<CR>
+imap <silent> <C-A-Up> <Esc>:m-2<CR>
+nmap <silent> <C-A-Down> :m+<CR>
+imap <silent> <C-A-Down> <Esc>:m+<CR>
 
 " CTRL-SHIFT-f to format code
-nnoremap <CS-f> :Autoformat<CR>
-inoremap <CS-f> <Esc>:Autoformat<CR>
+nnoremap <C-S-f> :Autoformat<CR>
+inoremap <C-S-f> <Esc>:Autoformat<CR>
 
 " Disable the EasyClip bindings, we just want it's yank panel
 let g:EasyClipUseYankDefaults=0
