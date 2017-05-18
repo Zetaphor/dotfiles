@@ -6,6 +6,8 @@ Set scaled_zoom to <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>z</kbd>
 Set group_tab to <kbd>Super</kbd> + <kbd>t</kbd>
 
 ## Vim Setup
+Install vim-gtk
+
 Install Vundle
 
 Open vim and run

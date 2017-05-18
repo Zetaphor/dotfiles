@@ -4,7 +4,7 @@
 " Updated by Dorian Neto (https://github.com/dorianneto)"
 
 set shell=/bin/bash
-set clipboard=unnamed
+set clipboard=unnamedplus
 
 set nocompatible
 filetype off
