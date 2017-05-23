@@ -256,9 +256,9 @@ nnoremap <C-S-f> :Autoformat<CR>
 inoremap <C-S-f> <Esc>:Autoformat<CR>
 
 " Text wrap simpler, then type the open tag or ',"
-vnoremap <C-A-w> :set invwrap<CR>
-nnoremap <C-A-w> :set invwrap<CR>
-inoremap <C-A-w> <Esc>:set invwrap<CR>i
+vnoremap <F9> :set invwrap<CR>
+nnoremap <F9> :set invwrap<CR>
+inoremap <F9> <Esc>:set invwrap<CR>i
 
 " Tagbar Toggle
 nnoremap <silent> <C-u> :TagbarToggle<CR>
