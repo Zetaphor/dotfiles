@@ -97,9 +97,6 @@ set hlsearch
 set ignorecase
 set smartcase
 
-" Don't use Ex mode, use Q for formatting
-"map Q gq
-
 " In many terminal emulators the mouse works just fine, thus enable it.
 if has('mouse')
   set mouse=a
@@ -112,9 +109,6 @@ set nobackup
 set nowritebackup
 set noswapfile
 set fileformats=unix,dos,mac
-
-" exit insert mode
-"inoremap <C-c> <Esc>
 
 set completeopt=menuone,longest,preview
 
@@ -280,6 +274,9 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
+" Stop vim-json from hiding double quotes
+let g:vim_json_syntax_conceal = 0
+
 " Highlight column
 if (exists('+colorcolumn'))
   set colorcolumn=80
@@ -295,6 +292,7 @@ function! ToggleErrors()
     Errors
   endif
 endfunction
+
 " CTRL-E to toggle Syntastic error panel
 nnoremap <silent> <C-e> :call ToggleErrors()<CR>
 
