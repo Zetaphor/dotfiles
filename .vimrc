@@ -39,7 +39,6 @@ Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-repeat'
-Plugin 'svermeulen/vim-easyclip'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
@@ -136,8 +135,6 @@ map <C-f> /
 " Capture SHIFT-Tab
 set t_kB=^[[Z]]
 map <Esc>[Z <S-Tab>
-"map! <Esc>[Z <S-Tab>
-"set <F13>=^[[Z]]
 
 " Tab and SHIFT-Tab to indent/unindent
 vnoremap <Tab> >>
@@ -241,9 +238,6 @@ vnoremap <c> y
 imap <C-v> <Esc>pi
 nmap <C-v> <Esc>p
 vmap <C-c> y
-        " FIXME: Yanks shortcut isn't working
-"nmap <silent> <C-i> :Yanks<CR>
-" imap <silent> <C-i> <Esc>:Yanks<CR>
 
 " Disable the c/p keys in normal mode
 nnoremap c <NOP>
@@ -257,8 +251,7 @@ nmap <silent> <C-Right> w
 nmap <silent> <C-Up> 5k
 nmap <silent> <C-Down> 5j
 
-" FIXME: This is not working
-" Move lines up/down with CTRL-SHIFT-Arrow
+" Move lines up/down with CTRL-ALT-Arrow
 nmap <silent> <C-A-Up> :m-2<CR>
 imap <silent> <C-A-Up> <Esc>:m-2<CR>
 nmap <silent> <C-A-Down> :m+<CR>
@@ -268,15 +261,10 @@ imap <silent> <C-A-Down> <Esc>:m+<CR>
 nnoremap <C-S-f> :Autoformat<CR>
 inoremap <C-S-f> <Esc>:Autoformat<CR>
 
-" Disable the EasyClip bindings, we just want it's yank panel
-let g:EasyClipUseYankDefaults=0
-let g:EasyClipUseCutDefaults=0
-let g:EasyClipUsePasteDefaults=0
-let g:EasyClipEnableBlackHoleRedirect=0
-let g:EasyClipUsePasteToggleDefaults=0
-
 " Text wrap simpler, then type the open tag or ',"
-vmap <CS-w> S
+vnoremap <C-A-w> :set invwrap<CR>
+nnoremap <C-A-w> :set invwrap<CR>
+inoremap <C-A-w> <Esc>:set invwrap<CR>i
 
 " Tagbar Toggle
 nnoremap <silent> <C-u> :TagbarToggle<CR>
