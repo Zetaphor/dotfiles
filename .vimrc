@@ -253,9 +253,9 @@ nnoremap o <NOP>
 nmap <silent> <C-Left> b
 nmap <silent> <C-Right> w
 
-" Move to start/end of line with CTRL-Up/Down
-nmap <silent> <C-Up> 0
-nmap <silent> <C-Down> $
+" Move cursor up/down 5 lines with CTRL-Up/Down
+nmap <silent> <C-Up> 5k
+nmap <silent> <C-Down> 5j
 
 " FIXME: This is not working
 " Move lines up/down with CTRL-SHIFT-Arrow
