@@ -86,8 +86,8 @@ set wildmenu
 set autoread
 
 set encoding=utf-8
-set tabstop=2 shiftwidth=2 expandtab
-set listchars=tab:▒░,trail:·
+set tabstop=2 shiftwidth=2
+set listchars=tab:¦\ ,trail:·
 set list
 
 "inoremap <C-U> <C-G>u<C-U>
@@ -298,11 +298,11 @@ nnoremap <silent> <C-e> :call ToggleErrors()<CR>
 
 set cursorline
 highlight CursorLine guibg=237
-highlight Cursor ctermfg=15;
+highlight Cursor ctermfg=15
+highlight SpecialKey ctermbg=235;
 
 " Change cursor line color when using insert mode
 autocmd InsertEnter * highlight CursorLine ctermbg=16
 autocmd InsertLeave * highlight CursorLine ctermbg=237;
-
 
 
