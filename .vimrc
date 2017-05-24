@@ -168,8 +168,8 @@ nnoremap <silent> <C-t>  :enew<CR>
 inoremap <silent> <C-t>  <Esc>:enew<CR>
 
 " Close buffer with CTRL-w
-nnoremap <silent> <C-w>  :bp <BAR> bd #<CR>
-inoremap <silent> <C-w>  <Esc>:bp <BAR> bd #<CR>
+nnoremap <silent> <C-w>  :bd<CR>
+inoremap <silent> <C-w>  <Esc>:bd<CR>
 
 " CTRL-b shows buffer list
 nnoremap <silent> <C-b> :ls<CR>
