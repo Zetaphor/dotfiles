@@ -15,7 +15,6 @@ Plugin 'VundleVim/Vundle.vim'
 
 " ------Plugins-------
 Plugin 'scrooloose/nerdtree'
-Plugin 'tpope/vim-surround'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
@@ -38,6 +37,7 @@ Plugin 'tpope/vim-repeat'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
+Plugin 'fisadev/vim-ctrlp-cmdpalette'
 
 " Color Themes
 Plugin 'colors'
@@ -134,6 +134,11 @@ nnoremap <S-Tab> <<
 inoremap <Tab> >>
 " This doesn't seem to be responding at all, check map!
 inoremap <S-Tab> <Esc>v<<
+
+" CTRL-SHIFT-p toggles command palette
+vnoremap <C-]> :CtrlPCmdPalette<CR>
+nnoremap <C-]> :CtrlPCmdPalette<CR>
+inoremap <C-]> <Esc>:CtrlPCmdPalette<CR>i
 
 " comment / decomment & normal comment behavior
 vmap <C-/> :TComment<CR>
