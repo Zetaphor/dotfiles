@@ -16,14 +16,12 @@ Plugin 'VundleVim/Vundle.vim'
 " ------Plugins-------
 Plugin 'scrooloose/nerdtree'
 Plugin 'tpope/vim-surround'
-Plugin 'gcmt/breeze.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 Plugin 'tomtom/tcomment_vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'davidhalter/jedi-vim'
 Plugin 'terryma/vim-multiple-cursors'
 Plugin 'posva/vim-vue'
 Plugin 'Yggdroot/indentLine'
@@ -33,9 +31,7 @@ Plugin 'ap/vim-css-color'
 Plugin 'othree/javascript-libraries-syntax.vim'
 Plugin 'sekel/vim-vue-syntastic'
 Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'tpope/vim-fugitive'
 Plugin 'Raimondi/delimitMate'
-Plugin 'majutsushi/tagbar'
 Plugin 'xolox/vim-misc'
 Plugin 'xolox/vim-easytags'
 Plugin 'tpope/vim-repeat'
@@ -117,7 +113,7 @@ set completeopt=menuone,longest,preview
 "
 
 " CtrlP
-set wildignore+=*/.git/*,*/.hg/*,*/.svn/*,*/node_modules/*,*/vendor/*
+set wildignore+=*/.git/*,*/*.pyc,*/.hg/*,*/.svn/*,*/node_modules/*,*/vendor/*
 
 " vim-airline
 let g:airline#extensions#tabline#enabled = 1
@@ -256,13 +252,9 @@ nnoremap <C-S-f> :Autoformat<CR>
 inoremap <C-S-f> <Esc>:Autoformat<CR>
 
 " Text wrap simpler, then type the open tag or ',"
-vnoremap <F9> :set invwrap<CR>
-nnoremap <F9> :set invwrap<CR>
-inoremap <F9> <Esc>:set invwrap<CR>i
-
-" Tagbar Toggle
-nnoremap <silent> <C-u> :TagbarToggle<CR>
-inoremap <silent> <C-u> <Esc>:TagbarToggle<CR>
+vnoremap <silent> <F9> :set invwrap<CR>
+nnoremap <silent> <F9> :set invwrap<CR>
+inoremap <silent> <F9> <Esc>:set invwrap<CR>i
 
 " delimitMate
 let delimitMate_expand_cr = 1
