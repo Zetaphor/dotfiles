@@ -38,6 +38,7 @@ Plugin 'Chiel92/vim-autoformat'
 Plugin 'scrooloose/nerdtree-git-plugin'
 Plugin 'ryanoasis/vim-devicons'
 Plugin 'fisadev/vim-ctrlp-cmdpalette'
+Plugin 'tiagofumo/vim-nerdtree-syntax-highlight'
 
 " Color Themes
 Plugin 'colors'
@@ -203,6 +204,9 @@ let g:syntastic_python_checkers = ['pylint']
 let g:syntastic_php_checkers = ['php']
 let g:syntastic_javascript_checkers = ['jshint']
 
+" Stop vim-json from hiding double quotes
+let g:vim_json_syntax_conceal = 0
+
 " Delete line with CTRL-k
 nnoremap <silent> <C-k>  dd
 inoremap <silent> <C-k>  <Esc>ddi
@@ -271,8 +275,6 @@ augroup mydelimitMate
   au FileType python let b:delimitMate_nesting_quotes = ['"', "'"]
 augroup END
 
-" Stop vim-json from hiding double quotes
-let g:vim_json_syntax_conceal = 0
 
 " Highlight column
 if (exists('+colorcolumn'))
