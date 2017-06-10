@@ -249,6 +249,8 @@ nmap <silent> <C-Right> w
 " Move cursor up/down 5 lines with CTRL-Up/Down
 nmap <silent> <C-Up> 5k
 nmap <silent> <C-Down> 5j
+imap <silent> <C-Up> <Esc>5k
+imap <silent> <C-Down> <Esc>5j
 
 " Move lines up/down with CTRL-ALT-Arrow
 nmap <silent> <C-A-Up> :m-2<CR>
@@ -264,6 +266,8 @@ inoremap <C-S-f> <Esc>:Autoformat<CR>
 vnoremap <silent> <F9> :set invwrap<CR>
 nnoremap <silent> <F9> :set invwrap<CR>
 inoremap <silent> <F9> <Esc>:set invwrap<CR>i
+
+nnoremap <silent><S-k> O<Esc>
 
 " delimitMate
 let delimitMate_expand_cr = 1
