@@ -47,8 +47,10 @@ bindsym $mod+d exec --no-startup-id j4-dmenu-desktop
 #bindsym $mod+k focus down
 #bindsym $mod+l focus up
 
-# Boss Mode
-bindsym $mod+semicolon workspace 1; workspace 2
+# Workspace Mode 1
+bindsym $mod+semicolon workspace 3; workspace 1
+# Workspace Mode 2
+bindsym $mod+l workspace 4; workspace 2
 
 # alternatively, you can use the cursor keys:
 bindsym $mod+Left focus left
@@ -149,21 +151,22 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym $mod+z move workspace to output left
 bindsym $mod+x move workspace to output right
 
-for_window [class="(?i)firefox"] title_format "<span fgcolor='#FFFFFF' bgcolor='#0B4362'>%title</span>"
-for_window [class="(?i)skype"] title_format "<span fgcolor='#FFFFFF' bgcolor='#4B6F7B'>%title</span>"
-for_window [class="(?i)atom"] title_format "<span fgcolor='#000000' bgcolor='#60B57C'>%title</span>"
+# Color window titles
+#for_window [class="(?i)firefox"] title_format "<span fgcolor='#FFFFFF' bgcolor='#0B4362'>%title</span>"
+#for_window [class="(?i)skype"] title_format "<span fgcolor='#FFFFFF' bgcolor='#4B6F7B'>%title</span>"
+#for_window [class="(?i)atom"] title_format "<span fgcolor='#000000' bgcolor='#60B57C'>%title</span>"
 
-# Lockscreen shortcut
+# Ctrl+Alt+L Lockscreen
 bindsym Control+mod1+l exec i3lock -c 000000
 
 # Disable window borders
 new_window none
 
 # Move Pithos to workspace 4
-assign [class="Pithos"] 4
+assign [class="Pithos"] 5
 
 # Move Skype to worspace 2
-assign [class="Skype"] 2
+assign [class="Skype"] 3
 
 # reload the configuration file
 bindsym $mod+Shift+c reload
@@ -213,7 +216,7 @@ bar {
 }
 
 exec --no-startup-id nm-applet
-exec --no-startup-id feh --bg-scale ~/Pictures/hans_zimmer_studio.jpg
+#exec --no-startup-id feh --bg-scale ~/Pictures/hans_zimmer_studio.jpg
 
 client.unfocused #333333 #333333 #FFFFFF #333333
 client.focused_inactive #333333 #333333 #FFFFFF #000000
