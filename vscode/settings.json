@@ -1,0 +1,32 @@
+// Place your settings in this file to overwrite the default settings
+{
+    "telemetry.enableTelemetry": false,
+    "telemetry.enableCrashReporter": false,
+    "terminal.integrated.shell.linux": "/usr/bin/fish",
+    "git.autofetch": false,
+    "editor.tabSize": 2,
+    "editor.fontFamily": "'Hack', 'Courier New', monospace, 'Droid Sans Fallback'",
+    "window.menuBarVisibility": "toggle",
+    "workbench.colorTheme": "Monokai",
+    "terminal.integrated.fontLigatures": true,
+    "editor.renderWhitespace": "all",
+    "editor.cursorBlinking": "expand",
+    "files.trimTrailingWhitespace": true,
+    "workbench.activityBar.visible": false,
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "jspm_packages": true,
+        "node_modules": true
+    },
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    "workbench.startupEditor": "newUntitledFile",
+    "vsicons.dontShowNewVersionMessage": true
+}
